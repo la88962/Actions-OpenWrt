@@ -80,10 +80,8 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@main
+      uses: mxschmitt/action-tmate@v3
       if: (env.SSH_ACTIONS == 'true') || contains(github.event.action, 'ssh')
-      with:
-        teleport: true
 
     - name: Download package
       id: package

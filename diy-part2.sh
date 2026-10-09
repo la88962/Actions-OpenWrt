@@ -19,3 +19,8 @@ sed -i 's/192.168.1.1/192.168.38.99/g' package/base-files/files/bin/config_gener
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+# 安裝 host 端的 upx 工具並建立軟連結，防止 mihomo 編譯報錯
+sudo apt-get update && sudo apt-get install -y upx
+mkdir -p staging_dir/host/bin
+ln -sf $(which upx) staging_dir/host/bin/upx

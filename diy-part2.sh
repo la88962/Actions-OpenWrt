@@ -20,8 +20,3 @@ sed -i 's/192.168.1.1/192.168.38.99/g' package/base-files/files/bin/config_gener
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-# 將 x86/x64 架構嘅預設內核版本強制改為 6.18
-sed -i 's/KERNEL_PATCHVER:=.*/KERNEL_PATCHVER:=6.18/g' target/linux/x86/Makefile
-
-# 同步修改測試版內核變數（以防萬一）
-sed -i 's/KERNEL_TESTING_PATCHVER:=.*/KERNEL_TESTING_PATCHVER:=6.18/g' target/linux/x86/Makefile

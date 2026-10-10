@@ -25,3 +25,6 @@ sed -i 's/KERNEL_PATCHVER:=.*/KERNEL_PATCHVER:=6.18/g' target/linux/x86/Makefile
 
 # 同步修改測試版內核變數（以防萬一）
 sed -i 's/KERNEL_TESTING_PATCHVER:=.*/KERNEL_TESTING_PATCHVER:=6.18/g' target/linux/x86/Makefile
+
+# 徹底清除 mt76 無線驅動編譯設定
+sed -i '/CONFIG_PACKAGE_kmod-mt76/d' .config

@@ -51,6 +51,7 @@ jobs:
 
     # 2. 補全所有官方依賴 (結合 Method 2 與 Method 1 雙重保險)
     - name: Initialization environment
+      timeout-minutes: 15
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
